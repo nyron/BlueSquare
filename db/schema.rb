@@ -25,4 +25,14 @@ ActiveRecord::Schema.define(version: 20160425154403) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "students", force: :cascade do |t|
+    t.string  "first_name", null: false
+    t.string  "last_name",  null: false
+    t.text    "quote"
+    t.string  "birthday"
+    t.integer "ssn",        null: false
+  end
+
+  add_index "students", ["ssn"], name: "students_ssn_key", unique: true, using: :btree
+
 end
