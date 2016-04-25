@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Naruto",
+    "summary": "A tale of a jinchuuriki",
+    "image": "http://i.imgur.com/IP59y.jpg",
+    "rank": "Anime"
+  },
+  {
+    "name": "Samurai Champloo",
+    "summary": "Mugen, Jin and Foo journey the land looking for the sunflower samurai",
+    "image": "http://i.imgur.com/2uOlta7.jpg?1",
+    "rank": "Anime"
+  },
+  {
+    "name": "FLCL",
+    "summary": "Small town, smaller dreams",
+    "image": "http://www.jasms.de/anime/flcl/naota.jpg",
+    "rank": "Anime"
+  },
+  {
+    "name": "Ramen Noodles",
+    "summary": "Japanese Food",
+    "image": "http://www.caliplate.com/wp-content/uploads/2016/03/Japanese-Ramen-ramen-noodles-25603031-500-333.jpg",
+    "rank": "Food"
+  },
+  {
+    "name": "Chiptole",
+    "summary": "Best Food Ever!",
+    "image": "http://a.abcnews.go.com/images/Health/ht_chipotle_vegan_sofritas_burrito_ll_130729_16x9_992.jpg",
+    "rank": "Food"
+  },
+  {
+    "name": "Beefaroni",
+    "summary": "Eat this at least once a week",
+    "image": "http://1.bp.blogspot.com/_wosEZOJ58DM/SlbCYlXiXuI/AAAAAAAAAs0/EZIQqKEMHPY/w1200-h630-p-nu/Crock+Pot+Beef-a-Roni.1.jpg",
+    "rank": "Food"
+  }
+]
