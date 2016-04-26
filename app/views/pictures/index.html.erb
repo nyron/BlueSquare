@@ -1,13 +1,15 @@
 <%= stylesheet_link_tag "pictures", property: :stylesheet %>
 <%= javascript_include_tag "pictures" %>
 
-<div class="container" data-ng-app="BlueSquare">
-  <header>
-    <img width="100" height="100" src="http://i.imgur.com/ueym1ZD.jpg"/>
-    <h1 class="index"><a data-ui-sref="index" href="#">BlueSquare</a></h1>
-    <hr>
-  </header>
-  <main data-ui-view>
+<div class="container-fluid" data-ng-app="BlueSquare">
 
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <!-- <img id="logo" src="http://i.imgur.com/ueym1ZD.jpg"/> -->
+    <h1 class="photolounge"><a data-ui-sref="index" href="#">Photos</a></h1>
+  </nav>
+
+  <main data-ui-view>
   </main>
+
 </div>

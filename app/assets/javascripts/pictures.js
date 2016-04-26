@@ -26,7 +26,7 @@
 
 function RouterFunction($stateProvider){
   $stateProvider
-  .state("index",{
+  .state("index", {
     url: "/",
     templateUrl: "ng-views/picture.index.html",
     controller: "indexCtrl",
@@ -47,7 +47,5 @@ function IndexControllerFunction(Picture){
   indexVM.pictures = Picture.all;
   indexVM.newPicture = new Picture();
 }
-
-
 
 })();
