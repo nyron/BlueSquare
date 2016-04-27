@@ -1,26 +1,14 @@
 [
   {
-    "name": "Naruto",
-    "summary": "A tale of a jinchuuriki",
-    "image": "http://i.imgur.com/IP59y.jpg",
-    "rank": "Anime"
+    "summary": "A tale of a jinchuuriki"
   },
   {
-    "name": "Samurai Champloo",
-    "summary": "Mugen, Jin and Foo",
-    "image": "http://i.imgur.com/2uOlta7.jpg?1",
-    "rank": "Sword Anime"
+    "summary": "Mugen, Jin and Foo"
   },
   {
-    "name": "FLCL",
-    "summary": "Small town, smaller dreams",
-    "image": "http://www.jasms.de/anime/flcl/naota.jpg",
-    "rank": "Anime"
+    "summary": "Small town, smaller dreams"
   },
   {
-    "name": "Bleach",
-    "summary": "Powers of a soul reaper",
-    "image": "https://i.ytimg.com/vi/oq2pa5CNf6k/maxresdefault.jpg",
-    "rank": "Sword Anime"
+    "summary": "Powers of a soul reaper"
   }
 ]

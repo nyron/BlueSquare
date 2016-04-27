@@ -1,10 +1,19 @@
-<div class="picture_container" data-ng-repeat="picture in indexVM.pictures">
 
-    <h3>{{picture.name}}</h3>
-    <h3>{{picture.summary}}</h3>
-    <h3>{{picture.rank}}</h3>
-    <div class="image_container center-block">
-    <img class="image_small" data-ng-src="{{picture.image}}"/>
+<div class="notebox">
+<div class="container" data-ng-repeat="picture in indexVM.pictures">
+
+
+<div class="row">
+  <div class="col-xs-offset-4 col-xs-4">
+    <h2 id="notes"><a href="#" data-ui-sref="show({id:picture.id})">{{picture.summary}}</a></h2>
+  </div>
   </div>
 
+</div>
+</div>
+
+<div class="row well">
+<div class="col-md-6">
+<div data-picture-form data-picture="indexVM.newPicture"></div>
+</div>
 </div>

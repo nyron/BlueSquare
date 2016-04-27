@@ -22,7 +22,16 @@
 .controller("indexCtrl",[
   "Picture",
   IndexControllerFunction
-]);
+])
+.controller("showCtrl", [
+  "Picture",
+  "$stateParams",
+  ShowControllerFunction
+])
+.directive("noteform",[
+  "Picture",
+  NoteFormFunction
+])
 
 function RouterFunction($stateProvider){
   $stateProvider
@@ -31,6 +40,12 @@ function RouterFunction($stateProvider){
     templateUrl: "ng-views/picture.index.html",
     controller: "indexCtrl",
     controllerAs: "indexVM"
+  })
+  .state("show", {
+    url: "/:id",
+    templateUrl: "ng-views/picture.show.html",
+    controller: "showCtrl",
+    controllerAs: "showVM"
   });
 }
 
@@ -46,6 +61,38 @@ function IndexControllerFunction(Picture){
   var indexVM = this;
   indexVM.pictures = Picture.all;
   indexVM.newPicture = new Picture();
+}
+function ShowControllerFunction(Picture, $stateParams){
+  var showVM = this;
+  Picture.all.$promise.then(function(){
+    Picture.all.forEach(function(picture){
+      if(picture.id == $stateParams.id){
+        showVM.picture = picture;
+      }
+    });
+  });
+}
+
+function NoteFormFunction(Picture){
+  return{
+    templateUrl: "ng-views/picture.form.html",
+    scope: {
+      picture: "=",
+      formMethod: "@"
+    },
+    link: function(scope){
+      scope.create = function(){
+        Picture.save(scope.picture, function(response){
+          Picture.all.push(response);
+        });
+      }
+      scope.update = function(){
+        Picture.update({id: scope.picture.id},
+          scope.picture, function(response){
+          });
+      };
+    }
+  };
 }
 
 })();
