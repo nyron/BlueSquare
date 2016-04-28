@@ -57,7 +57,7 @@ function IndexControllerFunction(Picture, $state){
   var indexVM = this;
   indexVM.pictures = Picture.all;
   indexVM.newPicture = new Picture();
-  indexVM.create = function () {
+  indexVM.create = function() {
     indexVM.newPicture.$save(function (picture) {
       Picture.all.push(picture);
     });
