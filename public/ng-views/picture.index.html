@@ -1,30 +1,21 @@
-
-
-
-
 <div class="notebox">
-<div class="container" data-ng-repeat="picture in indexVM.pictures">
+  <div class="container" data-ng-repeat="picture in indexVM.pictures">
 
+    <div class="row">
+      <div class="col-xs-offset-4 col-xs-4">
+        <h2 id="notes"><a href="#" data-ui-sref="show({id:picture.id})">{{picture.summary}}</a></h2>
+      </div>
+    </div>
+  </div>
 
-<div class="row">
   <div class="col-xs-offset-4 col-xs-4">
-    <h2 id="notes"><a href="#" data-ui-sref="show({id:picture.id})">{{picture.summary}}</a></h2>
+    <center><h2>Add your Note</h2></center>
+
+    <fieldset class="input-group">
+      <input type="text" class="form-control" data-ng-model="indexVM.newPicture.summary"/>
+      <h4>Notes</h4>
+    </fieldset>
+
+    <button type="button" class="btn btn-primary btn-block" data-ng-click="indexVM.create()">Submit</button>
   </div>
-  </div>
-
-</div>
-</div>
-
-
-<div class="col-xs-offset-4 col-xs-4">
-<center><h2>Add your Note</h2></center>
-
- <fieldset class="input-group">
-   <input type="text" class="form-control" data-ng-model="picture.summary"/>
-   <h4>Notes</h4>
- </fieldset>
-
- <button type="button" class="btn btn-primary btn-block" data-ng-click="picture.create()">Submit</button>
-
-
 </div>

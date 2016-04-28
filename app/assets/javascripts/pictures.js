@@ -21,18 +21,14 @@
 ])
 .controller("indexCtrl",[
   "Picture",
+  "$state",
   IndexControllerFunction
 ])
 .controller("showCtrl", [
   "Picture",
   "$stateParams",
   ShowControllerFunction
-])
-.directive("noteform",[
-  "Picture",
-  NoteFormFunction
-])
-
+]);
 function RouterFunction($stateProvider){
   $stateProvider
   .state("index", {
@@ -57,10 +53,15 @@ function JsonFactoryFunction($resource){
   return Picture;
 }
 
-function IndexControllerFunction(Picture){
+function IndexControllerFunction(Picture, $state){
   var indexVM = this;
   indexVM.pictures = Picture.all;
   indexVM.newPicture = new Picture();
+  indexVM.create = function () {
+    indexVM.newPicture.$save(function (picture) {
+      Picture.all.push(picture);
+    });
+  };
 }
 function ShowControllerFunction(Picture, $stateParams){
   var showVM = this;
@@ -71,28 +72,6 @@ function ShowControllerFunction(Picture, $stateParams){
       }
     });
   });
-}
-
-function NoteFormFunction(Picture){
-  return{
-    templateUrl: "ng-views/picture.form.html",
-    scope: {
-      picture: "=",
-      formMethod: "@"
-    },
-    link: function(scope){
-      scope.create = function(){
-        Picture.save(scope.picture, function(response){
-          Picture.all.push(response);
-        });
-      }
-      scope.update = function(){
-        Picture.update({id: scope.picture.id},
-          scope.picture, function(response){
-          });
-      };
-    }
-  };
 }
 
 })();
